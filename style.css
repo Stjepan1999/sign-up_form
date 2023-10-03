@@ -1,0 +1,32 @@
+:root {
+    --grey: #BFBFBF;
+    --orange: #FC814A;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Main container for entire page*/
+.grid-container {
+    display: grid;
+    grid-template: 20vh 80vh / 30vw 70vw;
+    grid-template-areas: 
+        "image header"
+        "image form-container";
+}
+
+.image {
+    grid-area: image;
+    background: var(--orange);
+}
+
+.header {
+    grid-area: header;
+}
+
+.form-container {
+    grid-area: form-container;
+    background: var(--grey);
+}
