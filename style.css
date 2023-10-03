@@ -70,5 +70,21 @@ input:valid + span::after {
     color: var(--green);
     left: 205px;
     top: -28px;
+}
 
+
+input[id="user_email"]:invalid:focus + span::after {
+    content: "*Enter valid email";
+}
+
+input[id="user_phone"]:invalid:focus + span::after {
+    content: "*Enter 10-digit phone number";
+}
+
+input[id="user_password"]:invalid:focus + span::after {
+    content: "*Enter password";
+}
+
+input[id="confirm_password"]:invalid:focus + span::after {
+    content: "*Passwords did not match";
 }
