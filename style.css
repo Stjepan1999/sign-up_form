@@ -2,6 +2,7 @@
     --grey: #BFBFBF;
     --orange: #FC814A;
     --cyan: #564256;
+    --green: #00cc00;
 }
 
 body {
@@ -56,4 +57,18 @@ input {
     width: 220px;
     border-radius: 3px;
     margin-top: 3px;
+}
+
+input + span {
+    position: relative;
+}
+
+input:valid + span::after {
+    position: absolute;
+    content: "✓";
+    font-size: 28px;
+    color: var(--green);
+    left: 205px;
+    top: -28px;
+
 }
