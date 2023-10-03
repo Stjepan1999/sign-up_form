@@ -48,6 +48,7 @@ form {
     grid-template: repeat(4, 75px) / repeat(2, 200px);
     grid-column-gap: 100px;
     grid-row-gap: 20px;
+
 }
 
 input {
