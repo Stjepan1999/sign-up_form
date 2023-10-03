@@ -11,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Young Serif', serif;
+    overflow: hidden;
 }
 
 /*Main container for entire page*/
@@ -28,6 +29,12 @@ body {
     background: var(--orange);
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .header {
     grid-area: header;
     background: var(--grey);
@@ -39,7 +46,7 @@ body {
     background: #FFFFFF;
     padding: 5px 75px;
     box-shadow: 0 4px 4px -2px gray;
-    position: relative;
+
 }
 
 .submit-container {
@@ -48,13 +55,14 @@ body {
     padding: 15px 75px;
 }
 
-.form-container > h3 {
+.form-container > p {
     font-size: 32px;
 }
 
 form > div > p {
     width: 320px;
 }
+
 .submit-container > button {
     background: var(--orange);
     width: 200px;
@@ -79,7 +87,7 @@ form {
     display: grid;
     grid-template: repeat(4, 75px) / repeat(2, 200px) ;
     grid-column-gap: 100px;
-    grid-row-gap: 20px;
+    grid-row-gap: 10px;
 }
 
 
@@ -114,7 +122,7 @@ input:focus {
     outline: none;
     background: var(--grey);
     border: 2px solid black;
-    box-shadow: 3px 3px 5px black;
+    box-shadow: 1px 1px 3px black;
     width: 222px;
     height: 22px;
 }
@@ -129,6 +137,10 @@ input:not(:placeholder-shown):invalid {
     border: 2px solid red;
   }
 
+/*Green border when valid input entered*/
+input:not(:placeholder-shown):valid {
+    border: 2px solid var(--green);
+  }
 
 input:invalid + span::after {
     position: absolute;
