@@ -1,5 +1,5 @@
 :root {
-    --grey: #BFBFBF;
+    --grey: #f0f0f0;
     --orange: #FC814A;
     --cyan: #564256;
     --green: #00cc00;
@@ -16,10 +16,11 @@ body {
 /*Main container for entire page*/
 .grid-container {
     display: grid;
-    grid-template: 30vh 70vh / 40vw 60vw;
+    grid-template: 30vh 40vh 30vh / 40vw 60vw;
     grid-template-areas: 
         "image header"
-        "image form-container";
+        "image form-container"
+        "image submit-container";
 }
 
 .image {
@@ -29,22 +30,45 @@ body {
 
 .header {
     grid-area: header;
-    background: var(--cyan);
+    background: var(--grey);
     padding: 75px;
 }
 
 .form-container {
     grid-area: form-container;
-    background: var(--grey);
+    background: #FFFFFF;
     padding: 5px 75px;
+    box-shadow: 0 4px 4px -2px gray;
+    position: relative;
+}
+
+.submit-container {
+    grid-area: submit-container;
+    background: var(--grey);
+    padding: 15px 75px;
 }
 
 .form-container > h3 {
     font-size: 32px;
 }
 
-form > div > button {
+form > div > p {
+    width: 320px;
+}
+.submit-container > button {
     background: var(--orange);
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    box-shadow: 3px 3px 5px black;
+    color: white;
+    transition: .3s;
+}
+
+.submit-container > button:hover {
+    background: #D16020;
 }
 
 p > span {
@@ -53,11 +77,12 @@ p > span {
 
 form {
     display: grid;
-    grid-template: repeat(4, 75px) / repeat(2, 200px);
+    grid-template: repeat(4, 75px) / repeat(2, 200px) ;
     grid-column-gap: 100px;
     grid-row-gap: 20px;
-
 }
+
+
 
 input {
     height: 20px;
@@ -87,7 +112,7 @@ input:valid {
 
 input:focus {
     outline: none;
-    background: lightgrey;
+    background: var(--grey);
     border: 2px solid black;
     box-shadow: 3px 3px 5px black;
     width: 222px;
@@ -96,18 +121,24 @@ input:focus {
 
 input:hover {
     transition: .1s;
-    background: lightgrey;
+    background: var(--grey);
 }
+
+/*Red border when invalid input entered*/
+input:not(:placeholder-shown):invalid {
+    border: 2px solid red;
+  }
 
 
 input:invalid + span::after {
+    position: absolute;
     color: red;
-    top: 20px;
+    top: 5px;
+    width: 200px;
 }
 
 input[id="user_email"]:invalid:focus + span::after {
     content: "*Enter valid email";
-    top: -50px;
 }
 
 input[id="user_phone"]:invalid:focus + span::after {
