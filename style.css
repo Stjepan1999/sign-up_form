@@ -1,6 +1,7 @@
 :root {
     --grey: #BFBFBF;
     --orange: #FC814A;
+    --cyan: #564256;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
 /*Main container for entire page*/
 .grid-container {
     display: grid;
-    grid-template: 20vh 80vh / 30vw 70vw;
+    grid-template: 30vh 70vh / 30vw 70vw;
     grid-template-areas: 
         "image header"
         "image form-container";
@@ -24,9 +25,34 @@ body {
 
 .header {
     grid-area: header;
+    background: var(--cyan);
+    padding: 75px;
 }
 
 .form-container {
     grid-area: form-container;
     background: var(--grey);
+    padding: 5px 75px;
+}
+
+.form-container > h3 {
+    font-size: 32px;
+}
+
+form > div > button {
+    background: var(--orange);
+}
+
+form {
+    display: grid;
+    grid-template: repeat(4, 75px) / repeat(2, 200px);
+    grid-column-gap: 100px;
+    grid-row-gap: 20px;
+}
+
+input {
+    height: 20px;
+    width: 220px;
+    border-radius: 3px;
+    margin-top: 3px;
 }
